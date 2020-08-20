@@ -1,7 +1,6 @@
 
 import os
 import math
-import csv
 import copy
 import csv
 import matplotlib
