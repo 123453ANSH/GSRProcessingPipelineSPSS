@@ -21,6 +21,7 @@ Note - for in depth explanation of program methodology and features, please read
 6) optional feature to print metrics for the user before data is saved; purpose is to visually check if data is accurate
 7) saves the chosen metric for all files in a .csv for further analysis with the SPSS software 
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 What the pipeline does: 
 
@@ -35,4 +36,17 @@ Note - for all the following metrics, all GSR peak values are reported in the mi
 - average value of peak amplitude in file across entire time series
 3. The processed .csv files can be inputted directly into the SPSS software to generate statistics about the GSR data from pre -> post -> followup for all participants in a research study, which will indicate whether the research study hypothesis is supported or not. 
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
+How to use this pipeline: 
+
+Note - ensure you have python 3.7 or greater installed in your text editor/IDE with the following packages: Matplotlib, Scipy, Csv, Numpy, Os, and Math.
+
+1) Download the .py file and open in appropriate text editor/IDE. Program was created in pyCharm and Jupyter Notebooks; running the script in either of these IDE's would allow for the least errors while setting up.
+2) at the top of the script, edit the 'Folder', 'Folder1', and 'NewFilePath' variables to the directory of the following:
+- for 'Folder', edit to the directory where experimental group GSR data is stored
+- for 'Folder1', edit to the directory where control group GSR data is stored 
+- for 'NewFilePath', edit to the directory where you would like the processed GSR metrics to be stored
+3) ensure the GSR files are of type .txt; if they are of any other type, convert them to type .txt before using this script
+4) Run the preprocessing() function to process all the raw GSR data to the metrics denoted above the divider (-------); processed data for every file will be stored in a new .csv file at the directory you specified through the 'NewFilePath' variable
+5) import this .csv file into SPSS to generate statistics on the data, and see whether the hypothesis of your research study is supported or refuted from the GSR data!
