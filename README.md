@@ -5,10 +5,34 @@ Galvanic Skin Response processing pipeline designed for eventual analysis with S
 
 Overview: 
 
-Pipeline that processes raw iMotions Galvanic Skin Response data into metrics about the GSR data. These metrics are formatted and saved into a .csv file that can be directly inputted into IBM's SPSS Statistical Analysis software. This software uses the metrics to generate various statistics that can be extrapolated to indicate whether the hypothesis of the research study is correct or not. 
-
- - add that this research-grade software meant for research in the description so the last sentence makes sense!
+This data analysis pipeline was developed for the UCSF Neuroscape lab. The Pipeline processes raw iMotions Galvanic Skin Response data into metrics about the GSR data. These metrics are formatted and saved into a .csv file that can be directly inputted into IBM's SPSS Statistical Analysis software. This software uses the metrics in the .csv to generate various statistics that can be extrapolated to either support or refute the hypothesis and goal of a Neuroscape research study. 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Specifics:
+Pipeline High Level Methodology: 
+
+Note - for in depth explanation of program methodology and features, please read documentation in pipeline
+
+1) implemented mean filter to eliminate tonic GSR signal and drift. Generates phasic GSR signal 
+2) implemented low-pass filter to eliminate high frequency noise
+3) programmed peak detection algorithm with amplitude and artifact filters; peaks with miniscule amplitudes and/or arifacts are discarded 
+4) optional feature to visualize phasic GSR data before and after filters are implemented to check if data is accurate
+5) calculates all metrics descripted in "what the pipeline does" section below using the peak and phasic GSR signal data
+6) optional feature to print metrics for the user before data is saved; purpose is to visually check if data is accurate
+7) saves the chosen metric for all files in a .csv for further analysis with the SPSS software 
+
+
+What the pipeline does: 
+
+Note - for all the following metrics, all GSR peak values are reported in the microsiemens unit. All timestamp values are reported in milli-seconds.
+
+1. takes in input of a folder containing raw iMotions Galvanic Skin Response data files
+2. processes each file, reporting one of the following metrics in a processed file (user of script decides which metric is reported in .csv):
+- number of phasic GSR peaks in file across entire time series
+- number of GSR peaks in every 20 second range for entire time series (excluding first and last four seconds; common practice to exclude data at beginning and end of file for biometric data analysis pipeline aimed towards aiding scientific studies)
+- average phasic GSR value in file across entire time series
+- average phasic GSR value in every 20 second range for entire time series (excluding first and last four seconds; common practice to exclude data at beginning and end of file for biometric data analysis pipeline aimed towards aiding scientific studies)
+- average value of peak amplitude in file across entire time series
+3. The processed .csv files can be inputted directly into the SPSS software to generate statistics about the GSR data from pre -> post -> followup for all participants in a research study, which will indicate whether the research study hypothesis is supported or not. 
+
+
