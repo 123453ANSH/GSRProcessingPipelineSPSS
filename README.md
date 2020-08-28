@@ -13,9 +13,11 @@ Pipeline High Level Methodology:
 
 Note - for in depth explanation of program methodology and features, please read documentation in pipeline
 
-1) implemented mean filter to eliminate tonic GSR signal and drift. Generates phasic GSR signal 
-2) implemented low-pass filter to eliminate high frequency noise
-3) programmed peak detection algorithm with amplitude and artifact filters; peaks with miniscule amplitudes and/or arifacts are discarded 
+1) organizes 
+1) extracts data from raw iMotions file
+implements mean filter to eliminate tonic GSR signal and drift. Generates phasic GSR signal 
+2) implements low-pass filter to eliminate high frequency noise
+3) implements peak detection algorithm with amplitude and artifact filters; peaks with miniscule amplitudes and/or arifacts are discarded 
 4) optional feature to visualize phasic GSR data before and after filters are implemented to check if data is accurate
 5) calculates all metrics descripted in "what the pipeline does" section below using the peak and phasic GSR signal data
 6) optional feature to print metrics for the user before data is saved; purpose is to visually check if data is accurate
