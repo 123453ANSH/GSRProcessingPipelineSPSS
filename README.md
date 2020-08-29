@@ -34,9 +34,9 @@ Note - for all the following metrics, all GSR peak values are reported in the mi
 1. takes in input of a folder containing raw iMotions Galvanic Skin Response data files
 2. processes each file, reporting one of the following metrics in a processed file (user of script decides which metric is reported in .csv):
 - number of phasic GSR peaks across entire time series in a file 
-- number of GSR peaks in every 20 second range for entire time series (excluding first and last four seconds; common practice to exclude data at beginning and end of file for biometric data analysis for scientific studies)
+- number of GSR peaks in every 20 second range for entire time series (excluding first and last four seconds; common practice to exclude data at beginning and end of file for biometric data analysis in scientific studies)
 - average phasic GSR value across entire time series in a file 
-- average phasic GSR value in every 20 second range for entire time series (excluding first and last four seconds; common practice to exclude data at beginning and end of file for biometric data analysis for scientific studies)
+- average phasic GSR value in every 20 second range for entire time series (excluding first and last four seconds; common practice to exclude data at beginning and end of file for biometric data analysis in scientific studies)
 - average value of peak amplitude across entire time series in a file 
 3. The processed .csv files can be inputted directly into the SPSS software to generate statistics about the GSR data from pre -> post -> followup for all participants in a research study, which will indicate whether the research study hypothesis is supported or not. 
 
@@ -46,8 +46,8 @@ How to use this pipeline:
 
 Note - ensure you have python 3.7 or greater installed in your text editor/IDE with the following packages: Matplotlib, Scipy, Csv, Numpy, Os, and Math.
 
-1) Download the .py file and open in appropriate text editor/IDE. Program was created in pyCharm and Jupyter Notebooks; running the script in either of these IDE's would allow for the least errors while setting up.
-2) at the top of the script, edit the 'Folder', 'Folder1', and 'NewFilePath' variables to the directory of the following:
+1) Download the .py file and open in appropriate text editor/IDE. This program was created in pyCharm and Jupyter Notebooks; running the script in either of these IDE's would allow for the least errors while setting up.
+2) at the top of the script, edit the 'Folder', 'Folder1', and 'NewFilePath' variables to the following:
 - for 'Folder', edit to the directory where experimental group GSR data is stored
 - for 'Folder1', edit to the directory where control group GSR data is stored 
 - for 'NewFilePath', edit to the directory where you would like the processed GSR metrics to be stored
